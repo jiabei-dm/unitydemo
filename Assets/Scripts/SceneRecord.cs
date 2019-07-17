@@ -47,7 +47,7 @@ public class SceneRecord : MonoBehaviour
     public class ImageInfo
     {
         public string fileName;
-        public ulong timestampMs;
+        public double timestampSec;
         public string poseStatus;
         public Pose framePose;
         public Matrix4x4 poseMatrix;
@@ -354,7 +354,7 @@ public class SceneRecord : MonoBehaviour
         _results.images.Add(new ImageInfo
         {
             fileName = String.Format(@"image{0}.jpeg", _results.images.Count),
-            timestampMs = extras.VcamTimestampUs,
+            timestampSec = ((double) extras.VcamTimestampUs) / 1000000.0d,
             poseStatus = poseResult.ToString(),
             framePose = pose,
             poseMatrix = matrix4X4
