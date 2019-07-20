@@ -37,7 +37,6 @@ public class PlayerTrigger : MonoBehaviour
         }
         transform.localScale = Vector3.zero;
         MLInput.OnTriggerDown += OnTriggerDown;
-
     }
 
     void OnDestroy()
@@ -58,7 +57,7 @@ public class PlayerTrigger : MonoBehaviour
             BaseRaycast raycast = _raycastBehaviour.GetActiveRaycast();
             if (raycast != null)
             {
-                _playerMovement.moveTo(raycast.transform.position);
+                _playerMovement.ForceMove(raycast.transform.position);
             }
         }
     }

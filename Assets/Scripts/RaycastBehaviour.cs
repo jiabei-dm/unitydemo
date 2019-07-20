@@ -45,6 +45,8 @@ public class RaycastBehaviour : MonoBehaviour
     /// </summary>
     void Awake()
     {
+        Application.SetStackTraceLogType(LogType.Log, StackTraceLogType.None);
+
         if (_statusLabel == null)
         {
             Debug.LogError("Error: RaycastExample._statusLabel is not set, disabling script.");
@@ -80,7 +82,7 @@ public class RaycastBehaviour : MonoBehaviour
             return;
         }
 
-        MLInput.OnControllerButtonDown += OnButtonDown;
+        // MLInput.OnControllerButtonDown += OnButtonDown;
         UpdateRaycastMode();
     }
 
@@ -89,7 +91,7 @@ public class RaycastBehaviour : MonoBehaviour
     /// </summary>
     void OnDestroy()
     {
-        MLInput.OnControllerButtonDown -= OnButtonDown;
+        // MLInput.OnControllerButtonDown -= OnButtonDown;
     }
     #endregion
 
