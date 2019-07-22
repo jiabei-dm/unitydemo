@@ -976,8 +976,7 @@ MonoBehaviour:
   _visualBounds: {fileID: 333912032}
   _bounded: 0
   _statusLabel: {fileID: 2066349677}
-  _shootingPrefab: {fileID: 1077380812898234, guid: aaf96304138cd1e468d96168dd00538c,
-    type: 3}
+  _shootingPrefab: {fileID: 131352, guid: 9ea5b38899d28c24ea33cf9f3476f8e0, type: 3}
   _controllerConnectionHandler: {fileID: 1747550480}
 --- !u!114 &1813943455
 MonoBehaviour:
