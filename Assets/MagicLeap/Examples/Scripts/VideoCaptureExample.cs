@@ -14,7 +14,6 @@ using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.XR.MagicLeap;
 using System.Collections.Generic;
-using System.Runtime.Serialization.Json;
 
 namespace MagicLeap
 {

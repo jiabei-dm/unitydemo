@@ -14,4 +14,6 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/MagicLeap/Examples/Scenes/Persistence.unity
     guid: e79870b2eb36346328264d71a965cd0a
-  m_configObjects: {}
+  m_configObjects:
+    com.unity.xr.management.loader_settings: {fileID: 11400000, guid: 4b93e59f6e32eff468211448e8040f94,
+      type: 2}

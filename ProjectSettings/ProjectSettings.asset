@@ -121,7 +121,8 @@ PlayerSettings:
     16:9: 1
     Others: 1
   bundleVersion: 1.0
-  preloadedAssets: []
+  preloadedAssets:
+  - {fileID: 8748429736542002287, guid: 4b93e59f6e32eff468211448e8040f94, type: 2}
   metroInputSource: 0
   wsaTransparentSwapchain: 0
   m_HolographicPauseOnTrackingLoss: 1
@@ -289,7 +290,7 @@ PlayerSettings:
     - Oculus
     - OpenVR
   - m_BuildTarget: Lumin
-    m_Enabled: 1
+    m_Enabled: 0
     m_Devices:
     - Lumin
   openGLRequireES31: 0
@@ -552,7 +553,8 @@ PlayerSettings:
   scriptingRuntimeVersion: 1
   gcIncremental: 0
   gcWBarrierValidation: 0
-  apiCompatibilityLevelPerPlatform: {}
+  apiCompatibilityLevelPerPlatform:
+    Lumin: 3
   m_RenderingPath: 1
   m_MobileRenderingPath: 1
   metroPackageName: 2018-3d-beginner

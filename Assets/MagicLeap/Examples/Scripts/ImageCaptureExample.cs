@@ -13,7 +13,6 @@
 using System;
 using UnityEngine;
 using UnityEngine.Events;
-using UnityEngine.UI;
 using UnityEngine.XR.MagicLeap;
 using System.Collections.Generic;
 using System.Threading;
@@ -32,9 +31,6 @@ namespace MagicLeap
 
         [SerializeField, Space]
         private ImageCaptureEvent OnImageReceivedEvent = null;
-
-        [SerializeField]
-        private Text _text;
 
         private bool _isCameraConnected = false;
         private bool _isCapturing = false;
@@ -87,7 +83,6 @@ namespace MagicLeap
                 if (_isCameraConnected)
                 {
                     MLCamera.OnRawImageAvailable -= OnCaptureRawImageComplete;
-                    MLCamera.OnCaptureCompleted -= OnCaptureCompleted;
                     _isCapturing = false;
                     DisableMLCamera();
                 }
@@ -109,7 +104,6 @@ namespace MagicLeap
                     if (_isCameraConnected)
                     {
                         MLCamera.OnRawImageAvailable -= OnCaptureRawImageComplete;
-                        MLCamera.OnCaptureCompleted -= OnCaptureCompleted;
                         _isCapturing = false;
                         DisableMLCamera();
                     }
@@ -218,7 +212,6 @@ namespace MagicLeap
                 {
                     EnableMLCamera();
                     MLCamera.OnRawImageAvailable += OnCaptureRawImageComplete;
-                    MLCamera.OnCaptureCompleted += OnCaptureCompleted;
                 }
                 MLInput.OnControllerButtonDown += OnButtonDown;
 
@@ -261,14 +254,6 @@ namespace MagicLeap
             {
                 TriggerAsyncCapture();
             }
-        }
-
-        private void OnCaptureCompleted(MLCameraResultExtras extras, string extraString)
-        {
-            
-            String info = String.Format("OnCaptureCompleted.\n Frame number: {0}, Frame time: {1}\nExtra String: {2}", extras.FrameNumber, extras.VcamTimestampUs, extraString);
-            Debug.Log(info);
-            _text.text = info;
         }
 
         /// <summary>

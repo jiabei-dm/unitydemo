@@ -55,7 +55,7 @@ namespace MagicLeap
         private const float SHOOTING_FORCE = 300.0f;
         private const float MIN_BALL_SIZE = 0.2f;
         private const float MAX_BALL_SIZE = 0.5f;
-        private const int BALL_LIFE_TIME = 60;
+        private const int BALL_LIFE_TIME = 10;
 
         private Camera _camera = null;
         #endregion
@@ -203,8 +203,15 @@ namespace MagicLeap
 
                 ball.SetActive(true);
                 float ballsize = Random.Range(MIN_BALL_SIZE, MAX_BALL_SIZE);
-                ball.transform.localScale = new Vector3(0.75f, 0.75f, 0.75f);
-                ball.transform.position = _camera.gameObject.transform.position + _camera.gameObject.transform.forward;
+                ball.transform.localScale = new Vector3(ballsize, ballsize, ballsize);
+                ball.transform.position = _camera.gameObject.transform.position;
+
+                Rigidbody rigidBody = ball.GetComponent<Rigidbody>();
+                if (rigidBody == null)
+                {
+                    rigidBody = ball.AddComponent<Rigidbody>();
+                }
+                rigidBody.AddForce(_camera.gameObject.transform.forward * SHOOTING_FORCE);
 
                 Destroy(ball, BALL_LIFE_TIME);
             }

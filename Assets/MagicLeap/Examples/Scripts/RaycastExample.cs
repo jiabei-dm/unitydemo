@@ -183,28 +183,5 @@ namespace MagicLeap
             UpdateStatusText();
         }
         #endregion
-
-        #region Public
-
-        public BaseRaycast GetActiveRaycast()
-        {
-            switch (_raycastMode)
-            {
-                case RaycastMode.Controller:
-                    {
-                        return _raycastController;
-                    }
-                case RaycastMode.Head:
-                    {
-                        return _raycastHead;
-                    }
-                case RaycastMode.Eyes:
-                    {
-                        return _raycastEyes;
-                    }
-            }
-            return null;
-        }
-        #endregion
     }
 }
